@@ -7,6 +7,18 @@
     <link rel="stylesheet" type="text/css" href="../../styles.css">
     <script type="text/javascript" >
       var i = 0;
+      function palielinat() {
+      let c = document.getElementById("vertiba").value;
+//      c++;
+ let d = parseInt(c,10);
+ d=d+1;
+      document.getElementById("vertiba").value = d.toString();
+      }
+      function samazinat() {
+      let b = document.getElementById("vertiba").value;
+      b=b-1;
+      document.getElementById("vertiba").value = b;
+      }
     </script>
   </head>
   <body class="container">
