@@ -6,6 +6,42 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../styles.css">
     <script type="text/javascript" >
+      let x = document.createElement("FORM");
+      let rowid=0;
+    function forma() {
+
+      rowid++;  
+  x.setAttribute("id", "myForm");
+  document.body.appendChild(x);
+  
+      
+  let row = document.createElement("div");
+  row.setAttribute("id", "row" + rowid);
+  document.getElementById("myForm").appendChild(row);
+
+  let y = document.createElement("INPUT");
+  y.setAttribute("type", "text");
+  row.appendChild(y);
+
+  let z = document.createElement("INPUT");
+  z.setAttribute("type", "text");
+  row.appendChild(z);
+
+  let btn = document.createElement("BUTTON");
+  let text =   document.createTextNode("TESTS");
+  row.appendChild(btn)
+    btn.appendChild(text);
+      btn.onclick=function(oEvent)
+      {
+        $(this).closest("div").remove();
+      }  
+
+    document.getElementById("MyForm").deleteRow(0);
+    
+//   let br = document.createElement("br");
+// element.getElementById("myForm").appendChild(br);
+ 
+}
     </script>
   </head>
   <body class="container">
@@ -13,6 +49,8 @@
       <h1>Darbības ar DOM elementiem</h1>
       <ol>
         <li>Izveidot funkciju, kura izveidos jaunu HTML "form" DOM elementu</li>
+        <button onclick="forma()">Aiziet</button>
+ <!--       <button onclick="myFunction()">Try it</button>-->
         <li>Izveidot funkciju, kura pievienos HTML DOM "form" elementam jaunu rindu ar diviem ievadlaukiem un pogu</li>
         <li>Izveidot funkciju, kura 2 punktā pievneotās pogas nospiešanas gadījumā dzēstu no HTML DOM formas to rindu kurā atrodas šī nospiestā poga</li>
         <li>Pievienot formai pogu "Pievienot rindu" ar kuras nospiešanu tiks izpildīta funkcijas no otrā punkta</li>
