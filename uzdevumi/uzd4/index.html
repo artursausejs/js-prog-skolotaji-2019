@@ -6,9 +6,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../styles.css">
     <script type="text/javascript" >
+    let dati={
+    };
       let x = document.createElement("FORM");
       let rowid=0;
-    function forma() {
+    function pievienot(i){
+      console.log("pirmais"+i);
+      let a = document.getElementById("pirmais"+i).value;
+      let v = document.getElementById("otrais"+i).value;
+
+      dati[a]=v;
+      let y = document.createElement("INPUT");
+      y.setAttribute("id", "pirmais"+ a);
+      y.setAttribute("type", "text");
+      y.setAttribute("onchange", "pievienot(" + a + ")" );
+      var out='';
+      for (var key in dati){
+        out += key + ': '+ dati[key] + '\n';
+      }
+      alert(out);
+
+
+    }
+      function forma() {
 
       rowid++;  
   x.setAttribute("id", "myForm");
@@ -20,11 +40,16 @@
   document.getElementById("myForm").appendChild(row);
 
   let y = document.createElement("INPUT");
+  y.setAttribute("id", "pirmais"+ rowid);
   y.setAttribute("type", "text");
+  y.setAttribute("onchange", "pievienot(" + rowid + ")" );
   row.appendChild(y);
+  
 
   let z = document.createElement("INPUT");
+  z.setAttribute("id", "otrais"+ rowid);
   z.setAttribute("type", "text");
+  z.setAttribute("onchange", "pievienot(" + rowid + ")" );
   row.appendChild(z);
 
   let btn = document.createElement("BUTTON");
@@ -36,7 +61,7 @@
         $(this).closest("div").remove();
       }  
 
-    document.getElementById("MyForm").deleteRow(0);
+ //   document.getElementById("MyForm").deleteRow(0);
     
 //   let br = document.createElement("br");
 // element.getElementById("myForm").appendChild(br);
