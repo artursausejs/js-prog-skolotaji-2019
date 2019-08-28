@@ -6,21 +6,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../styles.css">
     <script type="text/javascript" >
+    function aiziet() {
       var objekts = {
         firstName : "John",
         lastName  : "Doe",
         age     : 50,
         eyeColor  : "blue"};
         document.getElementById("demo").innerHTML = objekts.firstName + " " + objekts.lastName;
+      }
+      function atslega(){
+        objekts.key3 = "value3";
+        document.getElementById("demo").innerHTML = objekts.firstName + " " + objekts.key3;
+      }
     </script>
   </head>
-  <body class="container">
+  <body class="container" onload="aiziet()">
     <div id="task">
       <h1>Manipulācijas ar objektiem</h1>
       <p id="demo"></p>
       <ol>
         <li>Izveidot funkciju, kura pievienos jaunu atslēgu ar vērtību objektam</li>
         <li>Izveidot funkciju, kura dzēsīs atslēgu (un tās vērtību) no objekta</li>
+        <input type="button" onclick="atslega()" name="atslega" value="Pievienot jaunu atslēgu">
         <li>Izveidot funkciju, kura izdrukās visas objekta atslēgas un to vērtības</li>
       </ol>
     </div>
